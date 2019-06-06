@@ -1,0 +1,48 @@
+<div class="container border">
+    <h3>Introduzca Los Datos</h3>
+    <form (ngSubmit)="submitAgregar()" #usuarioForm="ngForm">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required [(ngModel)]="user.nombre"
+            name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                Introduzca Su Nombre
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="apellidoP">Apellido Paterno</label>
+          <input type="text" class="form-control" id="apellidoP" required [(ngModel)]="user.apellidoP"
+          name="apellidoP" #apellidoP="ngModel">
+          <div [hidden]="apellidoP.valid || apellidoP.pristine" class="alert alert-danger">
+              Introduzca Su Apellido Paterno Por Favor
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="apellidoM">Apellido Materno</label>
+          <input type="text" class="form-control" id="apellidoM" required [(ngModel)]="user.apellidoM"
+          name="apellidoM" #apellidoM="ngModel">
+          <div [hidden]="apellidoM.valid || apellidoM.pristine" class="alert alert-danger">
+              Introduzca Su Apellido Materno Por Favor
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo Electronico</label>
+          <input type="text" class="form-control" id="correo" required email [(ngModel)]="user.correo"
+          name="correo" #correo="ngModel">
+          <div [hidden]="correo.valid || correo.pristine" class="alert alert-danger">
+              Introduzca Un Correo Con Formato Correcto (Ejemplo: xxxxxx@xxx.com)
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contra">Contraseña</label>
+          <input type="password" class="form-control" id="contra" required [(ngModel)]="user.contra"
+          name="contra" #contra="ngModel">
+          <div [hidden]="contra.valid || contra.pristine" class="alert alert-danger">
+              Introduzca Su Contraseña Por Favor
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid">
+          Agregar
+        </button>
+    </form>
+  </div>

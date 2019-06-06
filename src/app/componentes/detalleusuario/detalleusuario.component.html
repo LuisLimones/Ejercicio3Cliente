@@ -1,0 +1,12 @@
+<div class="container" style="width:30rem">
+    <div class="card">
+      <h5 class="card-header">{{usuario.nombre}} {{usuario.apellidoP}} {{usuario.apellidoM}}</h5>
+      <div class="card-body">
+        <p class="card-text">Correo Electronico: {{usuario.correo}}</p>
+        <p class="card-text">Contraseña: {{usuario.contra}}</p>
+        <a routerLink="/actualizar/{{usuario.id}}" routerLinkActive="active-link" class="btn btn-outline-primary btn-lg">Actualizar</a>
+        <a (click)="eliminar()" class="btn btn-outline-danger btn-lg">Eliminar</a>
+      </div>
+    </div>
+  </div>
+  
