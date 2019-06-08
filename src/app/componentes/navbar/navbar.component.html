@@ -5,8 +5,20 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/usuarios']" routerLinkActive>Ver Usuarios</a>
       </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/agregar']" routerLinkActive>Agregar Usuarios</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive>LogIn</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a (click)="onLogout()" class="nav-link">LogOut</a>
       </li>
     </ul>
   </div>

@@ -40,4 +40,14 @@ export class UsuarioService {
   login(data):Observable<any>{
     return this.http.post<any>(this.url + '/login', data);
   }
+
+  logout(){
+    localStorage.removeItem('token');
+    location.assign("/login");
+  }
+
+  logeado(){
+    console.log("llega logeado en service")
+    return !!localStorage.getItem('token');
+  }
 }

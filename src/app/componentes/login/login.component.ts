@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private router:Router ) { }
 
   ngOnInit() {
+    if (this.usuarioService.logeado()) {
+      this.router.navigate(['/usuarios']);
+    } 
   }
 
   submitLogear(){

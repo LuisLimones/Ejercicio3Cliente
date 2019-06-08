@@ -6,14 +6,15 @@ import { AgregarusuarioComponent } from './componentes/agregarusuario/agregarusu
 import { ActualizarusuarioComponent } from './componentes/actualizarusuario/actualizarusuario.component';
 import { NoencontradoComponent } from './componentes/noencontrado/noencontrado.component';
 import { LoginComponent} from './componentes/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/usuarios', pathMatch: 'full'},
   {path:'login', component: LoginComponent},
-  {path: 'usuarios', component: VerusuariosComponent},
-  {path: 'agregar', component: AgregarusuarioComponent},
-  {path: 'usuario/:id', component: DetalleusuarioComponent},
-  {path: 'actualizar/:id', component: ActualizarusuarioComponent},
+  {path: 'usuarios', component: VerusuariosComponent, canActivate: [AuthGuard]},
+  {path: 'agregar', component: AgregarusuarioComponent, canActivate: [AuthGuard]},
+  {path: 'usuario/:id', component: DetalleusuarioComponent, canActivate: [AuthGuard]},
+  {path: 'actualizar/:id', component: ActualizarusuarioComponent, canActivate: [AuthGuard]},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: NoencontradoComponent}
 ];
 

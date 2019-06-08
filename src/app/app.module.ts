@@ -15,6 +15,7 @@ import { ActualizarusuarioComponent } from './componentes/actualizarusuario/actu
 import { UsuarioService } from './servicios/usuario.service';
 import { InterceptorUsuarioService } from './interceptores/interceptor-usuario.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LoginComponent } from './componentes/login/login.component';
       useClass: InterceptorUsuarioService,
       multi: true
     },
-    UsuarioService
+    UsuarioService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
