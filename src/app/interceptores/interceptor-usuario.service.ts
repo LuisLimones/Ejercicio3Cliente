@@ -26,7 +26,15 @@ export class InterceptorUsuarioService implements HttpInterceptor{
     );
   }
   manejarError(error: HttpErrorResponse){
-    alert('Ocurrio un error con el servidor');
-    return throwError(error);
+    if(error.status==401){
+      alert("Error De Autenticacio\nFavor De Volver A Iniciar Sesion");
+      localStorage.removeItem('token');
+      location.assign('/');
+    }
+    else{
+      alert("Error Del Servidor Intente Mas Tarde");
+      return throwError(error);
+    }
+    
   }
 }

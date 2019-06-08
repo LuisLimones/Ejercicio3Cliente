@@ -47,7 +47,8 @@ export class UsuarioService {
   }
 
   logeado(){
-    console.log("llega logeado en service")
+    console.log(!!localStorage.getItem('token'));
     return !!localStorage.getItem('token');
+    
   }
 }
