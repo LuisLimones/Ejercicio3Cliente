@@ -24,7 +24,8 @@ export class ActualizarusuarioComponent implements OnInit {
   submitActualizar(){
     this.usuarioService.putUsuario(this.user).subscribe();
     alert("Usuario Actualizado");
-    this.router.navigateByUrl('#');
+    //this.router.navigateByUrl('#');
+    location.href="/";
   }
 
 }

@@ -11,9 +11,13 @@ export class InterceptorUsuarioService implements HttpInterceptor{
   constructor() { }
 
   intercept(req, next){
+    let token = null;
+    if(localStorage.getItem('token') != null){
+      token=localStorage.getItem('token');
+    }
     let authReq=req.clone({
       setHeaders: {
-        Authorization: 'Bearer Mientras.No.Sirve'
+        Authorization: 'Bearer '+ token
       }
     })
     return next.handle(authReq)

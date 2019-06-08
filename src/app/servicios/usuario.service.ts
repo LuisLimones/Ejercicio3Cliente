@@ -36,4 +36,8 @@ export class UsuarioService {
   putUsuario(usuario: Usuario): Observable<Usuario>{
     return this.http.put<Usuario>(this.url + '/actualizar/' + usuario.id, usuario, this.httpOptions);
   }
+
+  login(data):Observable<any>{
+    return this.http.post<any>(this.url + '/login', data);
+  }
 }

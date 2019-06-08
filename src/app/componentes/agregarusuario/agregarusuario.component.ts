@@ -25,7 +25,7 @@ export class AgregarusuarioComponent implements OnInit {
 
   submitAgregar(){
     this.usuarioService.postUsuario(this.user).subscribe();
-    this.router.navigateByUrl('#');
+    location.href= "/";
     alert("Usuario agregado");
   }
 

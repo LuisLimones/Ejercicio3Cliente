@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelos/usuario';
 import { UsuarioService } from '../../servicios/usuario.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-verusuarios',
@@ -12,7 +13,7 @@ export class VerusuariosComponent implements OnInit {
 
   usuarios: Usuario[];
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, location: Location) { }
 
   ngOnInit() {
     this.getUsuarios();

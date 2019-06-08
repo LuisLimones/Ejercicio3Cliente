@@ -5,9 +5,11 @@ import { DetalleusuarioComponent } from './componentes/detalleusuario/detalleusu
 import { AgregarusuarioComponent } from './componentes/agregarusuario/agregarusuario.component';
 import { ActualizarusuarioComponent } from './componentes/actualizarusuario/actualizarusuario.component';
 import { NoencontradoComponent } from './componentes/noencontrado/noencontrado.component';
+import { LoginComponent} from './componentes/login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/usuarios', pathMatch: 'full'},
+  {path:'login', component: LoginComponent},
   {path: 'usuarios', component: VerusuariosComponent},
   {path: 'agregar', component: AgregarusuarioComponent},
   {path: 'usuario/:id', component: DetalleusuarioComponent},

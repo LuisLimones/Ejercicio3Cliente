@@ -22,7 +22,8 @@ export class DetalleusuarioComponent implements OnInit {
 
   eliminar(){
     this.usuarioService.deleteUsuario(this.id).subscribe();
-    this.router.navigateByUrl('/#');
+    //this.router.navigateByUrl('/#');
+    location.href="/";
     alert("Usuario Eliminado");
   }
 }

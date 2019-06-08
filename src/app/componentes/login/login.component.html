@@ -1,0 +1,30 @@
+<div class="row pt-5">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">Inicia Sesion</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="submitLogear()" #loginForm="ngForm">
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="text" class="form-control" id="correo" required email [(ngModel)]="logeo.correo"
+            name="correo" #correo="ngModel">
+            <div [hidden]="correo.valid || correo.pristine" class="alert alert-danger">
+                Introduzca Su Correo
+            </div>
+            <label for="contra">Constraseña</label>
+            <input type="password" class="form-control" id="contra" required [(ngModel)]="logeo.contra"
+            name="contra" #contra="ngModel">
+            <div [hidden]="contra.valid || contra.pristine" class="alert alert-danger">
+                Introduzca Su Contraseña
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary float-right" [disabled]="!loginForm.form.valid">
+            Logear
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

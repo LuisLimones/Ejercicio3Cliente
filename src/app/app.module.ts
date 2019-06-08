@@ -14,6 +14,7 @@ import { AgregarusuarioComponent } from './componentes/agregarusuario/agregarusu
 import { ActualizarusuarioComponent } from './componentes/actualizarusuario/actualizarusuario.component';
 import { UsuarioService } from './servicios/usuario.service';
 import { InterceptorUsuarioService } from './interceptores/interceptor-usuario.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InterceptorUsuarioService } from './interceptores/interceptor-usuario.s
     NavbarComponent,
     NoencontradoComponent,
     AgregarusuarioComponent,
-    ActualizarusuarioComponent
+    ActualizarusuarioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
